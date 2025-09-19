@@ -204,12 +204,19 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    // Open the call popup
-    $('.open-call-popup-for-lead').click(function(e){
-        e.preventDefault(); // ✅ Prevent href from triggering navigation
-        $('.call-popup').slideDown(300);
-        $('.call-popup').addClass('lead-in-popup');
-    });
+
+  // Open the call popup
+  $('.open-call-popup-for-lead').click(function(e){
+    e.preventDefault(); // ✅ Prevent href from triggering navigation
+    $('.call-popup').slideDown(300);
+    $('.call-popup').addClass('lead-in-popup');
+  });
+
+  // Show popup automatically on page load
+  setTimeout(function() {
+    $('.call-popup').slideDown(300);
+    $('.call-popup').addClass('lead-in-popup');
+  }, 500); // 0.5s after page load
 
     // Close the call popup
     $('.call-popup .xmark').click(function(){
